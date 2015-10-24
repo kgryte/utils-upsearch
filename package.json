@@ -29,6 +29,7 @@
     "fs",
     "resolve",
     "find",
+    "findup",
     "locate",
     "search",
     "walk",
