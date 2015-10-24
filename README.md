@@ -83,11 +83,11 @@ var path = upsearch.sync( './../../non/existent/dir/or/file/path' );
 var readFile = require( 'utils-upsearch' );
 
 // Sync:
-var path = upsearch.sync( 'upsearch', {
+var path = upsearch.sync( 'utils-upsearch', {
 	'dir': __dirname
 });
 console.log( path );
-// returns /path/to/upsearch
+// returns /path/to/utils-upsearch
 
 path = upsearch.sync( 'non_existent_basename' );
 console.log( path );

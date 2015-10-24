@@ -1,16 +1,24 @@
 'use strict';
 
-var upsearch = require( './../lib' );
+var path = require( 'path' ),
+	upsearch = require( './../lib' );
+
+var base,
+	dir,
+	out;
+
+dir = path.resolve( __dirname, '..' );
+base = path.basename( dir );
 
 // Sync:
-var path = upsearch.sync( 'upsearch', {
+out = upsearch.sync( base, {
 	'dir': __dirname
 });
-console.log( path );
+console.log( out );
 // returns /path/to/upsearch
 
-path = upsearch.sync( 'non_existent_basename' );
-console.log( path );
+out = upsearch.sync( 'non_existent_basename' );
+console.log( out );
 // returns null
 
 
