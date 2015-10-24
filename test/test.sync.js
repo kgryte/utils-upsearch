@@ -108,8 +108,14 @@ describe( 'sync', function tests() {
 	});
 
 	it( 'should return resolve a path (directory)', function test() {
-		var res = upsearch( 'upsearch' );
-		assert.strictEqual( res, path.resolve( __dirname, '../' ) );
+		var base,
+			dir,
+			res;
+
+		dir = path.resolve( __dirname, '..' );
+		base = path.basename( dir );
+		res = upsearch( base );
+		assert.strictEqual( res, dir );
 	});
 
 	it( 'should return resolve a path when provided a starting directory', function test() {

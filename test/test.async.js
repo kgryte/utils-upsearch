@@ -165,9 +165,14 @@ describe( 'async', function tests() {
 	});
 
 	it( 'should return resolve a path (directory)', function test( done ) {
-		upsearch( 'upsearch', clbk );
+		var base,
+			dir;
+
+		dir = path.resolve( __dirname, '..' );
+		base = path.basename( dir );
+		upsearch( base, clbk );
 		function clbk( error, res ) {
-			assert.strictEqual( res, path.resolve( __dirname, '../' ) );
+			assert.strictEqual( res, dir );
 			done();
 		}
 	});

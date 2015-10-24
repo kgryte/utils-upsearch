@@ -27,10 +27,13 @@ upsearch( '.npmrc', done );
 
 function done( error, path ) {
 	if ( error ) {
-		console.error( error );
-	} else {
-		console.log( path );
+		return console.error( error );
 	}
+	if ( path === null ) {
+		return console.log( 'Unable to resolve path.' );
+	}
+	console.log( path );
+	// returns /path/to/.npmrc
 }
 ```
 
@@ -51,7 +54,7 @@ Synchronously attempts to resolve a (file or directory) `path` by walking up fro
 
 ``` javascript
 var path = upsearch.sync( '.npmrc' );
-console.log( path );
+returns /path/to/.npmrc
 ```
 
 To begin searching from a particular directory, set the `dir` option.
@@ -62,7 +65,14 @@ var opts = {
 };
 
 var path = upsearch.sync( '.npmrc', opts );
-console.log( path );
+// returns /path/to/.npmrc
+```
+
+If unable to resolve a `path`, the method returns `null`.
+
+``` javascript
+var path = upsearch.sync( './../../unknown/dir/or/file/path' );
+// returns null
 ```
 
 
