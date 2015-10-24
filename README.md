@@ -54,7 +54,7 @@ Synchronously attempts to resolve a (file or directory) `path` by walking up fro
 
 ``` javascript
 var path = upsearch.sync( '.npmrc' );
-returns /path/to/.npmrc
+// returns /path/to/.npmrc
 ```
 
 To begin searching from a particular directory, set the `dir` option.
