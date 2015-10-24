@@ -15,7 +15,7 @@ out = upsearch.sync( base, {
 	'dir': __dirname
 });
 console.log( out );
-// returns /path/to/upsearch
+// returns /path/to/utils-upsearch
 
 out = upsearch.sync( 'non_existent_basename' );
 console.log( out );
