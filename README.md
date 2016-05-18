@@ -37,7 +37,7 @@ function done( error, path ) {
 }
 ```
 
-By default, the `function` begins searching in the [current working directory](https://github.com/kgryte/utils-cwd). To being searching from a different directory, set the `dir` option.
+By default, the `function` begins searching in the [current working directory](https://github.com/kgryte/utils-cwd). To begin searching from a different directory, set the `dir` option.
 
 ``` javascript
 var opts = {
@@ -149,7 +149,7 @@ $ make view-cov
 
 ## Copyright
 
-Copyright &copy; 2015. Athan Reines.
+Copyright &copy; 2015-2016. Athan Reines.
 
 
 [npm-image]: http://img.shields.io/npm/v/utils-upsearch.svg
